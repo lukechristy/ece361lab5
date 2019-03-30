@@ -2,6 +2,8 @@ import ryu_ofctl
 
 dpid = '1'	#identifies the controller
 
+ryu_ofctl.deleteAllFlows(dpid)	#Flush the flow table
+
 # Flow for packets h1->h3 (blocks traffic)
 flow1 = ryu_ofctl.FlowEntry()	
 flow1.in_port = 1					#packets coming from port 1
